@@ -1,0 +1,96 @@
+body {
+    background-color: rgba(66, 64, 64, 0.801);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+    border-radius: 10px;;
+    background: url(download.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 7px 7px 7px rgba(9, 233, 46, 0.719); 
+
+  }
+  
+  h1, h2 {
+    text-align: center;
+    border-bottom: 2px solid rgba(9, 233, 46, 0.719);
+    color: rgba(255, 248, 248, 0.5);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+
+  
+  button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: rgba(9, 233, 46, 0.719);
+    transition: background-color 0.3s;
+  }
+
+  input:hover{
+    transition: background-color 0.3s;
+    background-color:rgb(56, 53, 53, 0.719);
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .expenses {
+    margin-top: 20px;
+   
+  }
+  
+  #expense-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #expense-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  #expense-list li span {
+    display: inline-block;
+    width: 100px;
+    color:rgb(56, 53, 53);
+  }
+  
+  .delete-btn {
+    cursor: pointer;
+  }
+
+  .delete-btn:hover{
+    color: red;
+  }
+  
