@@ -25,6 +25,20 @@ db.connect((err) => {
   }
 });
 
+const sequelize = new Sequelize(process.env.PG_DATABASE_URL, {
+  dialect: 'postgres',
+  logging: false,
+});
+
+sequelize.authenticate()
+  .then(() => {
+    console.log('PostgreSQL database connected successfully.');
+  })
+  .catch(err => {
+    console.error('PostgreSQL database connection failed:', err);
+  });
+
+
 // Set up routes and server 
 app.get('/api/expenses', (req, res) => {
   db.query('SELECT * FROM expenses', (error, results) => {
