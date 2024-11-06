@@ -27,14 +27,26 @@ db.connect((err) => {
   }
 });
 
-const sequelize = new Sequelize(process.env.PG_DATABASE_URL, {
-  dialect: 'postgres',
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_USER:', process.env.DB_USER);
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
+console.log('DB_NAME:', process.env.DB_NAME);
+
+
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+{
+  host: process.env.DB_HOST,
+  dialect: 'mysql',
   logging: false,
-});
+}
+);
 
 sequelize.authenticate()
   .then(() => {
-    console.log('PostgreSQL database connected successfully.');
+    console.log('MYSQL database connected successfully.');
   })
   .catch(err => {
     console.error('PostgreSQL database connection failed:', err);
