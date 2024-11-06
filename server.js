@@ -49,7 +49,9 @@ sequelize.authenticate()
     console.log('MYSQL database connected successfully.');
   })
   .catch(err => {
-    console.error('PostgreSQL database connection failed:', err);
+    console.error('MYSQL database failed to connect:', err);
+    console.error('Stack trace:', err.stack);
+    process.exit(1); 
   });
 
 
